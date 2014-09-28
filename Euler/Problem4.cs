@@ -8,45 +8,40 @@ using System.Text;
  * Problem 4
  * A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
  * Find the largest palindrome made from the product of two 3-digit numbers.
+ * Answers : 906609
  */ 
 namespace Euler
 {
     class Problem4
     {
-        int numberOfDigits=2;
-        int largestNumberFromDigits = 99;
-
         public void answerProblem()
         {
-            long n = 80177108;// 600851475143111;//four million 4 000 000 
-            //bool isPali= isPalindrome(n);
-            //getLargestPalindromeForNumberOfDigits(2);
-            Console.WriteLine("\nResult ==" + getLargestNumberFromDigits(7));
+            Console.WriteLine("\nResult ==" + getLargestPalindromeForNumberOfDigits(3));
         }
 
-        public void getLargestPalindromeForNumberOfDigits(int num)
+        public long getLargestPalindromeForNumberOfDigits(int num)
         {
             int numberOfDigits = num;
-            int largestNumberFromDigits = 99;
+            long largestNumberFromDigits = getLargestNumberFromDigits(numberOfDigits);
             long largesMultiple = 0;
-            for (int i = largestNumberFromDigits; i > 1; i--)
+            for (long i = largestNumberFromDigits; i > 1; i--)
             {
-                if (largesMultiple != 0)
-                    break;
-
-                for (int j = largestNumberFromDigits; j > 1; j--)
+                for (long j = largestNumberFromDigits; j > 1; j--)
                 {
                     long largesMultipleTemp=i*j;
                     if (isPalindrome(largesMultipleTemp))
                     {
                         if (largesMultipleTemp > largesMultiple)
+                        {
                             largesMultiple = largesMultipleTemp;
-                        Console.WriteLine("\nResult Largest Multiple ==" + largesMultipleTemp);
-                        break;
+                            //Console.WriteLine("\nResult " + i + " * " + j + " Largest Multiple ==" + largesMultipleTemp);
+                            break;
+                        }
                     }
                 }
             }
-           
+
+            return largesMultiple;
         }
 
         public bool isPalindrome(long num)
@@ -62,6 +57,7 @@ namespace Euler
             }
             return true;
         }
+
         public List<long> getDigitsList(long num)
         {
             List<long> digitsList = new List<long>();
@@ -69,8 +65,6 @@ namespace Euler
             {
                 long lastDigit =(long) num % 10;
                 digitsList.Add(lastDigit);
-
-                //Console.WriteLine("" + lastDigit);
                 num = num /10;
             }
             return digitsList;
