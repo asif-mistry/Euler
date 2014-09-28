@@ -9,7 +9,8 @@ using System.Text;
  * By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
  * 
  * What is the 10 001st prime number?
- * 
+ * Answer : 104743
+ * Time 14 sec
  */
 namespace Euler
 {
@@ -17,7 +18,7 @@ namespace Euler
     {
         public void answerProblem()
         {
-            Console.WriteLine("\nResult ==" + getPrimeForPosition(6));
+            Console.WriteLine("\nResult ==" + getPrimeForPosition(10001));
         }
 
         public long getPrimeForPosition(long position)
