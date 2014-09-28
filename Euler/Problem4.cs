@@ -19,14 +19,21 @@ namespace Euler
         public void answerProblem()
         {
             long n = 600851475143111;//four million 4 000 000 
-            bool isPali= isPalindrome(n);
+            //bool isPali= isPalindrome(n);
 
             //Console.WriteLine("\nResult ==" + isPali);
-
-            Console.WriteLine("\nCount ==" + getDigitCount(n));
         }
         public bool isPalindrome(long num)
         {
+            List<long> digitLists = getDigitsList(num);
+            bool isEven=false;
+            if ((digitLists.Count) % 2 == 0)
+                isEven = true;
+
+            if (isEven)
+            {
+
+            }
 
             List <int> integerList = new List <int> (); 
             //To iterate on items contained in the list, use the foreach operator :
@@ -53,6 +60,7 @@ namespace Euler
             }
             return true;
         }
+
         public int getDigitCount(long num)
         {
             int digitCount=0;
@@ -62,6 +70,20 @@ namespace Euler
                 digitCount++;
             }
             return digitCount;
+        }
+
+        public List<long> getDigitsList(long num)
+        {
+            List<long> digitsList = new List<long>();
+            while (num > 0)
+            {
+                long lastDigit =(long) num % 10;
+                digitsList.Add(lastDigit);
+
+                //Console.WriteLine("" + lastDigit);
+                num = num /10;
+            }
+            return digitsList;
         }
     }
 }
