@@ -24,7 +24,7 @@ namespace Euler
         int firstNaturalNumbers = 10;//first ten natural numbers
         public void answerProblem()
         {
-            Console.WriteLine("\nResult ==" + getSumOfSquares());
+            Console.WriteLine("\nResult ==" + getSquareOfSum());
         }
 
         public long getDelta ()
@@ -33,7 +33,8 @@ namespace Euler
             long sumOfSquares = 0;
             long squareOfSum = 0;
             long delta = 0;
-            
+
+            sumOfSquares = getSumOfSquares();
 
 
             delta = squareOfSum - sumOfSquares;
@@ -50,6 +51,18 @@ namespace Euler
                 sumOfSquares += i * i;
             }
             return sumOfSquares;
+        }
+
+        public long getSquareOfSum()
+        {
+            long squareOfSum = 0;
+
+            for (int i = 1; i <= firstNaturalNumbers; i++)
+            {
+                squareOfSum += i;
+            }
+            squareOfSum *= squareOfSum;
+            return squareOfSum;
         }
     }
 }
