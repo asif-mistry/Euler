@@ -16,13 +16,38 @@ namespace Euler
     {
         public void answerProblem()
         {
+            //spuno();
             Console.WriteLine("\nResult ==" + getLargestPalindromeForNumberOfDigits(3));
+        }
+
+        //spuno's answer 
+        public void spuno()
+        {
+            int sum;
+            int Largest = -1;
+            string res;
+            bool Palindrome = true;
+
+            for (int x = 999; x >= 1; x--)
+            {
+                for (int y = 999; y >= 1; y--)
+                {
+                    sum = x * y;
+                    res = sum.ToString();
+                    Palindrome = true;
+                    for (int t = 0; t < res.Length / 2; t++)
+                    {
+                        if (res[t] != res[res.Length - t - 1]) Palindrome = false;
+                    }
+                    if (Palindrome) if (sum > Largest) Largest = sum;
+                }
+            }
+            Console.WriteLine(Largest);
         }
 
         public long getLargestPalindromeForNumberOfDigits(int num)
         {
-            int numberOfDigits = num;
-            long largestNumberFromDigits = getLargestNumberFromDigits(numberOfDigits);
+            long largestNumberFromDigits = getLargestNumberFromDigits(num);
             long largestMultiple = 0;
             for (long i = largestNumberFromDigits; i > 1; i--)
             {
