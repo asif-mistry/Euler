@@ -52,7 +52,7 @@ namespace Euler
             if (num == 2)
                 return true;
 
-            for (long i = 3; i < num/2; i++)
+            for (long i = 3; i < num/2; i=i+2)
             {
                 if (num % i == 0)
                     return false;
