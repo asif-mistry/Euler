@@ -16,10 +16,8 @@ namespace Euler
 {
     class Problem1
     {
-
-        public void answerProblem1()
+        public void answerProblem()
         {
-
             int n = 1000;
             int result = 0;
 
@@ -30,14 +28,7 @@ namespace Euler
                     result += i;
                 }
             }
-
-
-            Console.WriteLine("Result ==" + result);
-
-
-
+            Console.WriteLine("Problem 1 Result ==" + result);
         }
-
-
     }
 }
