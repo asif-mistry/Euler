@@ -47,12 +47,12 @@ namespace Euler
             return 0;
         }
 
-        public bool isPrime(long num)
+        public static bool isPrime(long num)
         {
             if (num == 2)
                 return true;
 
-            for (long i = 3; i < num/2; i=i+2)
+            for (long i = 2; i < num/2; i++)
             {
                 if (num % i == 0)
                     return false;
