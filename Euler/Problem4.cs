@@ -18,60 +18,24 @@ namespace Euler
 
         public void answerProblem()
         {
-            long n = 600851475143111;//four million 4 000 000 
-            //bool isPali= isPalindrome(n);
+            long n = 80177108;// 600851475143111;//four million 4 000 000 
+            bool isPali= isPalindrome(n);
 
-            //Console.WriteLine("\nResult ==" + isPali);
+            Console.WriteLine("\nResult ==" + isPali);
         }
         public bool isPalindrome(long num)
         {
-            List<long> digitLists = getDigitsList(num);
-            bool isEven=false;
-            if ((digitLists.Count) % 2 == 0)
-                isEven = true;
-
-            if (isEven)
+            List<long> digitsList = getDigitsList(num);
+            int digitsCount = digitsList.Count;
+            for(int i = 0; i < digitsCount/2; i++) 
             {
-
-            }
-
-            List <int> integerList = new List <int> (); 
-            //To iterate on items contained in the list, use the foreach operator :
-            foreach(int i in integerList) 
-            { // do stuff with i 
-            }
-            //You can add items in the list object with Add() and Remove() functions.
-            for(int i = 0; i < 10; i++) 
-            {
-                integerList.Add(i); 
-            } 
-            integerList.Remove(6); 
-            integerList.Remove(7);
-            //You can convert a List<T> to an array using the ToArray() function :
-            
-            int[] integerArray = integerList.ToArray(); 
-            if (num == 2)
-                return true;
-
-            for (long i = 3; i < num / 2; i++)
-            {
-                if (num % i == 0)
+                if (!(digitsList[i] == digitsList[digitsCount - i-1]))
+                {
                     return false;
+                }
             }
             return true;
         }
-
-        public int getDigitCount(long num)
-        {
-            int digitCount=0;
-            while (num>0)
-            {
-                num = num / 10;
-                digitCount++;
-            }
-            return digitCount;
-        }
-
         public List<long> getDigitsList(long num)
         {
             List<long> digitsList = new List<long>();
