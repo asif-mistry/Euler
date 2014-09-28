@@ -16,12 +16,13 @@ using System.Text;
  * 
  * Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
  * 
+ * Answer : 25164150
 */
 namespace Euler
 {
     class Problem6
     {
-        int firstNaturalNumbers = 10;//first ten natural numbers
+        int firstNaturalNumbers = 100;//first ten natural numbers
 
         long sumOfSquares = 0;
         long squareOfSum = 0;
@@ -36,31 +37,7 @@ namespace Euler
             long delta = 0;
             getSumOfSquaresAndSquareOfSum();
             delta = squareOfSum - sumOfSquares;
-
             return delta;
-        }
-
-        public long getSumOfSquares()
-        {
-            long sumOfSquares = 0;
-
-            for (int i = 1; i <= firstNaturalNumbers; i++)
-            {
-                sumOfSquares += i * i;
-            }
-            return sumOfSquares;
-        }
-
-        public long getSquareOfSum()
-        {
-            long squareOfSum = 0;
-
-            for (int i = 1; i <= firstNaturalNumbers; i++)
-            {
-                squareOfSum += i;
-            }
-            squareOfSum *= squareOfSum;
-            return squareOfSum;
         }
 
         public void getSumOfSquaresAndSquareOfSum()
