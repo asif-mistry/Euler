@@ -20,7 +20,6 @@ namespace Euler
     {
         public void answerProblem()
         {
-
             long n = 4000000;//four million 4 000 000 
             long a = 1;
             long b = 1;
@@ -36,10 +35,9 @@ namespace Euler
                 {
                     result += b;
                 }
-
                 Console.Write(" " + b);
             }
-            Console.WriteLine("\nResult ==" + result);
+            Console.WriteLine("\nProblem 2 Result ==" + result);
         }
 
     }

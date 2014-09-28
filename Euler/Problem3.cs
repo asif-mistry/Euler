@@ -16,18 +16,16 @@ namespace Euler
     class Problem3
     {
         long largestPrime = 1;
-        //string s = "";
         public void answerProblem()
         {
             long n = 600851475143;//four million 4 000 000 
             getPrimeFactor(n);
 
-            Console.WriteLine("\nResult ==" + largestPrime);
+            Console.WriteLine("\nProblem 3 Result ==" + largestPrime);
         }
 
         public long getPrimeFactor(long num)
         {
-
             if (isPrime(num))
             {
                 if (num > largestPrime)
