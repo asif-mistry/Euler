@@ -23,7 +23,7 @@ namespace Euler
         {
             int numberOfDigits = num;
             long largestNumberFromDigits = getLargestNumberFromDigits(numberOfDigits);
-            long largesMultiple = 0;
+            long largestMultiple = 0;
             for (long i = largestNumberFromDigits; i > 1; i--)
             {
                 for (long j = largestNumberFromDigits; j > 1; j--)
@@ -31,9 +31,9 @@ namespace Euler
                     long largesMultipleTemp=i*j;
                     if (isPalindrome(largesMultipleTemp))
                     {
-                        if (largesMultipleTemp > largesMultiple)
+                        if (largesMultipleTemp > largestMultiple)
                         {
-                            largesMultiple = largesMultipleTemp;
+                            largestMultiple = largesMultipleTemp;
                             //Console.WriteLine("\nResult " + i + " * " + j + " Largest Multiple ==" + largesMultipleTemp);
                             break;
                         }
@@ -41,7 +41,7 @@ namespace Euler
                 }
             }
 
-            return largesMultiple;
+            return largestMultiple;
         }
 
         public bool isPalindrome(long num)
