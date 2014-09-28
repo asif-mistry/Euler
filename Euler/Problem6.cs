@@ -22,21 +22,19 @@ namespace Euler
     class Problem6
     {
         int firstNaturalNumbers = 10;//first ten natural numbers
+
+        long sumOfSquares = 0;
+        long squareOfSum = 0;
+
         public void answerProblem()
         {
-            Console.WriteLine("\nResult ==" + getSquareOfSum());
+            Console.WriteLine("\nResult ==" + getDelta());
         }
 
         public long getDelta ()
         {
-
-            long sumOfSquares = 0;
-            long squareOfSum = 0;
             long delta = 0;
-
-            sumOfSquares = getSumOfSquares();
-
-
+            getSumOfSquaresAndSquareOfSum();
             delta = squareOfSum - sumOfSquares;
 
             return delta;
@@ -63,6 +61,16 @@ namespace Euler
             }
             squareOfSum *= squareOfSum;
             return squareOfSum;
+        }
+
+        public void getSumOfSquaresAndSquareOfSum()
+        {
+            for (int i = 1; i <= firstNaturalNumbers; i++)
+            {
+                sumOfSquares += i * i;
+                squareOfSum += i;
+            }
+            squareOfSum *= squareOfSum;
         }
     }
 }
