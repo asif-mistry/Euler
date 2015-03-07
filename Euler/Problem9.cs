@@ -30,6 +30,7 @@ namespace Euler
 
             List<int> naturalSquareRoot = new List<int>();
 
+            //Loop through the numbers such that su of i, j, and k is not greater than 1000 as a+b+c=1000
             for (int i = 1; i <= num-2; ++i)
             {
                 for (int j = 1; j <= num - i; ++j)
@@ -75,19 +76,5 @@ namespace Euler
                 answer = (a * b * c);
             }
         }
-        /*
-        public List<int> getNauturalNumbersWithePerfectSquaresBelow(int num)
-        {
-            List<int> nauturalNumbersWithePerfectSquares = new List<int>();
-
-            for (int i = 1; i <= num; ++i)
-            {
-                int square = i*i;
-                if (square%
-            }
-
-
-            return nauturalNumbersWithePerfectSquares;
-        }*/
     }
 }
