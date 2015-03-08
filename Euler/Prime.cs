@@ -15,7 +15,7 @@ using System.Text;
  * Strike out the multiples of all primes less than or equal to the square root of n,
  * then the numbers that are left are the primes.
  * 
- * Check http://www.scriptol.com/programming/sieve.php for details
+ * Check http://www.scriptol.com/programming/sieve.php for details. DO NOT USE the C# implementation as its incorrect and too time consuming. I am using the Java implementation.
  */
 
 namespace Euler
@@ -23,46 +23,33 @@ namespace Euler
 
     class Prime
     {
-        public static List<ulong> getPrimeList(ulong num)
-        {        
-            bool [] primeList = new bool[num];
-            ulong i,j, k, l, n;
-            if (num < 1) 
-                num = 1;
-            n = num;
-            while (num-- > 0)
-            {
-                for (l = 2; l<=num; l++)
-                {
-                    primeList[l]=true;
-                }
 
-                for (i = 2; i <= num; i++)
+        public static List<ulong> getPrimeList(ulong num)
+        {            
+            bool[] primeList = new bool[num+1];
+            for (ulong i = 2; i <= num; i++)
+                primeList[i] = true;
+            
+            for (ulong i = 2; i*i <= num; i++)
+            {
+                if (primeList[i])
                 {
-                    if (primeList[i])
-                    {
-                        for (k = i + i; k <= num; k += i)
-                        {
-                            primeList[k] = false;
-                        }
-                    }
+                    for (ulong j = i; i*j <= num; j++)
+                        primeList[i*j] = false;
                 }
             }
-
-            List<ulong> listOfPrimes = new List<ulong> ();
-
-            for (j = 0; j < n; j++)
+            List<ulong> listOfPrimes = new List<ulong>();
+            for (ulong i = 2; i <= num; i++)
             {
-                if (primeList[j] == true)
+                if (primeList[i])
                 {
-                    listOfPrimes.Add(j);
+                    listOfPrimes.Add(i);
                 }
             }
 
             return listOfPrimes;
-
         }
- 
+         
         public static bool isPrime(ulong num)
         {
             if (num < 3)

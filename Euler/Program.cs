@@ -14,25 +14,13 @@ namespace Euler
     {
         static void Main(string[] args)
         {
-            Problem9 p = new Problem9();
+            Problem10 p = new Problem10();
 
             DateTime d = DateTime.Now;
             Console.WriteLine("Time started ==" + d);
 
-            //p.answerProblem();
-            List<ulong> primes = Prime.getPrimeList(100);
-            Console.WriteLine();
-            foreach (ulong i in primes)
-            {
-                Console.Write("  "+ i);
-            }
-
-            Console.WriteLine();
+            p.answerProblem();
             
-            //bool b = Prime.isPrime(997);
-            //Console.WriteLine(b);
-            //b = Prime.isPrime(103);
-
             TimeSpan t = d - DateTime.Now;
             Console.WriteLine("Time taken =="+t);
 
