@@ -18,14 +18,21 @@ namespace Euler
 
             DateTime d = DateTime.Now;
             Console.WriteLine("Time started ==" + d);
-            p.answerProblem();
-            
+
+            //p.answerProblem();
+            List<ulong> primes = Prime.getPrimeList(100);
+            Console.WriteLine();
+            foreach (ulong i in primes)
+            {
+                Console.Write("  "+ i);
+            }
+
+            Console.WriteLine();
             
             //bool b = Prime.isPrime(997);
             //Console.WriteLine(b);
             //b = Prime.isPrime(103);
 
-             Console.WriteLine(b);
             TimeSpan t = d - DateTime.Now;
             Console.WriteLine("Time taken =="+t);
 
