@@ -19,11 +19,13 @@ namespace Euler
             DateTime d = DateTime.Now;
             Console.WriteLine("Time started ==" + d);
             p.answerProblem();
-            //bool b = p.isPrime(99);
+            
+            
+            //bool b = Prime.isPrime(997);
             //Console.WriteLine(b);
-             //b = p.isPrime(103);
+            //b = Prime.isPrime(103);
 
-             //Console.WriteLine(b);
+             Console.WriteLine(b);
             TimeSpan t = d - DateTime.Now;
             Console.WriteLine("Time taken =="+t);
 
