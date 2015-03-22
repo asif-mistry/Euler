@@ -14,7 +14,7 @@ namespace Euler
     {
         static void Main(string[] args)
         {
-            Problem10 p = new Problem10();
+            Problem11 p = new Problem11();
 
             DateTime d = DateTime.Now;
             Console.WriteLine("Time started ==" + d);
