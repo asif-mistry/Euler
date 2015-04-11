@@ -19,7 +19,6 @@ namespace Euler
 {
     class Problem10
     {
-
         public void answerProblem()
         {
             ulong num = 2000000;//two million

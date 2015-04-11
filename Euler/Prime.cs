@@ -23,7 +23,6 @@ namespace Euler
 
     class Prime
     {
-
         public static List<ulong> getPrimeList(ulong num)
         {            
             bool[] primeList = new bool[num+1];
