@@ -26,8 +26,10 @@ We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred divisors?
 Answer : 76576500
  * 
- * time taken: around 3 hours
+ * time taken: around 3 hours for first method
  * 
+ * 
+ * Explanation::www.mathblog.dk/triangle-number-with-more-than-500-divisors/
  */
 
 namespace Euler
@@ -38,9 +40,9 @@ namespace Euler
         {
             bool answerFound = false;
 
-            int i = 10001; //last know nums I +1
+            int i = 1; //last know nums I +1
             int numberOfDivisors = 500;
-            int num = 50005000; //last known Num
+            int num = 0; //last known Num
 
             int loopCount = 0;
             
@@ -70,16 +72,20 @@ namespace Euler
                 return divisorCount;
             }
 
+            int sqrt = (int)Math.Sqrt(num);
             int compare = num / 2;
-            for (int i = 2; i <= compare; i++)
+            for (int i = 2; i <= sqrt; i++)
             {
                 if (num % i == 0)
-                    divisorCount++;
-
-
+                    divisorCount+=2;
+                
                 loopCount++;
             }
-
+            //Correction if the number is a perfect square
+            if (sqrt * sqrt == num)
+            {
+                divisorCount--;
+            }
             divisorCount++;//as the number to get the divisor is always the divisor
 
             return divisorCount;
