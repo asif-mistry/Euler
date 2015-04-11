@@ -2,3 +2,7 @@ C:\Users\ASIF\documents\visual studio 2010\Projects\Euler\Euler\bin\Release\Eule
 C:\Users\ASIF\documents\visual studio 2010\Projects\Euler\Euler\bin\Release\Euler.pdb
 C:\Users\ASIF\documents\visual studio 2010\Projects\Euler\Euler\obj\x86\Release\Euler.exe
 C:\Users\ASIF\documents\visual studio 2010\Projects\Euler\Euler\obj\x86\Release\Euler.pdb
+C:\Users\ASIF_2\Documents\Visual Studio 2010\Projects\Euler\Euler\bin\Release\Euler.exe
+C:\Users\ASIF_2\Documents\Visual Studio 2010\Projects\Euler\Euler\bin\Release\Euler.pdb
+C:\Users\ASIF_2\Documents\Visual Studio 2010\Projects\Euler\Euler\obj\x86\Release\Euler.exe
+C:\Users\ASIF_2\Documents\Visual Studio 2010\Projects\Euler\Euler\obj\x86\Release\Euler.pdb

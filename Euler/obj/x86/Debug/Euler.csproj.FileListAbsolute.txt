@@ -1,14 +1,4 @@
-C:\Users\ASIF\AppData\Local\Temporary Projects\Euler\bin\Debug\Euler.exe
-C:\Users\ASIF\AppData\Local\Temporary Projects\Euler\bin\Debug\Euler.pdb
-C:\Users\ASIF\AppData\Local\Temporary Projects\Euler\obj\x86\Debug\Euler.exe
-C:\Users\ASIF\AppData\Local\Temporary Projects\Euler\obj\x86\Debug\Euler.pdb
-C:\Users\ASIF\documents\visual studio 2010\Projects\Euler\Euler\obj\x86\Debug\Euler.exe
-C:\Users\ASIF\documents\visual studio 2010\Projects\Euler\Euler\obj\x86\Debug\Euler.pdb
-C:\Users\ASIF\documents\visual studio 2010\Projects\Euler\Euler\bin\Debug\Euler.exe
-C:\Users\ASIF\documents\visual studio 2010\Projects\Euler\Euler\bin\Debug\Euler.pdb
-C:\Users\ASIF\documents\visual studio 2010\Projects\Euler\Euler\obj\x86\Debug\Euler.csprojResolveAssemblyReference.cache
-C:\Users\ASIF_2\Documents\Visual Studio 2010\Projects\Euler\Euler\obj\x86\Debug\Euler.exe
-C:\Users\ASIF_2\Documents\Visual Studio 2010\Projects\Euler\Euler\obj\x86\Debug\Euler.pdb
 C:\Users\ASIF_2\Documents\Visual Studio 2010\Projects\Euler\Euler\bin\Debug\Euler.exe
 C:\Users\ASIF_2\Documents\Visual Studio 2010\Projects\Euler\Euler\bin\Debug\Euler.pdb
-C:\Users\ASIF_2\Documents\Visual Studio 2010\Projects\Euler\Euler\obj\x86\Debug\Euler.csprojResolveAssemblyReference.cache
+C:\Users\ASIF_2\Documents\Visual Studio 2010\Projects\Euler\Euler\obj\x86\Debug\Euler.exe
+C:\Users\ASIF_2\Documents\Visual Studio 2010\Projects\Euler\Euler\obj\x86\Debug\Euler.pdb
