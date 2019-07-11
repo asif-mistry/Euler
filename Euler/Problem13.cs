@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 
 
@@ -217,7 +218,7 @@ namespace Euler
 53503534226472524250874054075591789781264330331690";
 
 
-        public void answerProblem()
+        String[] getStringArray()
         {
             // processing:
             String[] result = inputFromQuestion
@@ -227,6 +228,81 @@ namespace Euler
             //.Select(x => x.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries))
             // case from IEnumerable<String[]> to String[][]
             .ToArray();
+
+            return result;
+        }
+
+        public void answerProblem()
+        {
+
+            String[] result = getStringArray();
+
+            Double[] bigIntArray = new Double[100];
+
+            for (int i = 0; i < result.Count(); i++)
+            {
+                String numberString = result[i];
+                Double bigInt = 0;
+                if (Double.TryParse(numberString, out bigInt))
+                {
+                    bigIntArray[i] = bigInt;
+                }
+                else
+                    Console.WriteLine("Unable to convert the string '{0}' to a BigInteger value.",
+                                       numberString);
+
+            }
+
+            Double totalSum = 0;
+
+            foreach (Double row in bigIntArray)
+            {                
+                totalSum += row;
+            }
+
+            Console.WriteLine("This is the toatl Sum");
+
+            Console.WriteLine(totalSum);
+
+        }
+
+        void answerUsingBigInt()
+        {
+
+            String[] result = getStringArray();
+
+            BigInteger[] bigIntArray = new BigInteger[100];
+
+            for (int i = 0; i < result.Count(); i++)
+            {
+                String numberString = result[i];
+                BigInteger bigInt = 0;
+                if (BigInteger.TryParse(numberString, out bigInt))
+                {
+                    bigIntArray[i] = bigInt;
+                }
+                else
+                    Console.WriteLine("Unable to convert the string '{0}' to a BigInteger value.",
+                                       numberString);
+
+            }
+
+            BigInteger totalSum = 0;
+
+            foreach (BigInteger row in bigIntArray)
+            {
+                totalSum += row;
+            }
+
+            Console.WriteLine("This is the toatl Sum");
+
+            Console.WriteLine(totalSum);
+        }
+
+
+        public void answerProblemOldIdea()
+        {
+            String[] result = getStringArray();
 
             uint[,] twoDimensionResult = new uint[100,50];
             for (int i = 0; i< 100; i++)
@@ -242,13 +318,15 @@ namespace Euler
                 }
 
             }
-
-
+            
             //We have no got the array as two dimensional int array
             ulong totalSum = 0;
+
+            string totalSumString = "";
             ulong carryOver = 0;
             ulong nextCarryOver = 0;
             String sumdigits = "";
+            ulong[] columnTotals = new ulong[50];
 
             for (int i = 49; i >= 0; i--)//columns
             {
@@ -260,31 +338,80 @@ namespace Euler
                     columnTotal += twoDimensionResult[j, i];
 
                 }
+                columnTotals[i] = columnTotal;
+
                 if (i == 0)
                 {
-                    totalSum += carryOver;
+                    //totalSum += carryOver;
 
                 }
                 else
                 {
-                    columnTotal += carryOver;
-                    ulong lastDigit = columnTotal % 10;
-                    sumdigits = lastDigit + sumdigits;
-                    totalSum += lastDigit;
-                    String strColumnTotal = columnTotal.ToString();
-                    strColumnTotal = strColumnTotal.Remove(strColumnTotal.Length - 1);
-                    nextCarryOver = Convert.ToUInt64(strColumnTotal);
+
+                    //sumdigits = lastDigit + sumdigits;
+                    //totalSum += lastDigit;
+                    //String strColumnTotal = columnTotal.ToString();
+                    //strColumnTotal = strColumnTotal.Remove(strColumnTotal.Length - 1);
+                    //nextCarryOver = Convert.ToUInt64(strColumnTotal);
 
                 }
-                carryOver = nextCarryOver;
-                nextCarryOver = 0;
+                //carryOver = nextCarryOver;
+                //nextCarryOver = 0;
 
 
                
             }
 
-            Console.WriteLine(totalSum);
+            //add  all column totals
+            for (int i = 49; i >= 0; i--)//columns
+            {
+
+                ulong columnTotal = columnTotals[i];
+
+                if (i != 0)
+                {
+                    //columnTotal += carryOver;
+                    ulong lastDigit = columnTotal % 10;
+
+                    totalSumString += lastDigit.ToString();
+
+
+                    carryOver = columnTotal / 10;// RemoveLastDigit(columnTotal);
+
+                    columnTotals[i - 1] += carryOver;
+                }
+                else
+                {
+                    totalSumString += columnTotal.ToString();
+
+                }
+
+
+
+            }
+
+
+
+
+
+
+                string reversed = new string(totalSumString.ToCharArray().Reverse().ToArray());
+
+            string truncatedToNLength = new string(reversed.Take(10).ToArray());
+
+            Console.WriteLine(truncatedToNLength);
 
         }
+
+        public ulong RemoveLastDigit(ulong number)
+        {
+            String numberString = number.ToString();
+
+            numberString = numberString.Remove(numberString.Length - 1);
+
+            ulong result = Convert.ToUInt64(numberString);
+            return result;
+        }
     }
+
 }

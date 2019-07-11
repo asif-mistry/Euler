@@ -5,7 +5,7 @@ using System.Text;
 using Euler;
 /*
  * UName: Asif178
- * Password: 13254678
+ * Password: 12354678
  * https://projecteuler.net/problem=1
  */
 namespace Euler
